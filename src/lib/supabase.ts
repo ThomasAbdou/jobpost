@@ -1,11 +1,4 @@
-import { createClient } from "@supabase/supabase-js";
-
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!;
-
-export const supabase = createClient(supabaseUrl, supabaseKey);
-
-// Saves user via server-side API route (uses service role key, bypasses RLS)
+// Saves user data via server-side API route (uses service role key, bypasses RLS)
 export async function saveUser({
   email,
   country,
