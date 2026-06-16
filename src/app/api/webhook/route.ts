@@ -4,11 +4,13 @@ import { createClient } from "@supabase/supabase-js";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
-// Use service-role key here so the webhook can bypass RLS
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-);
+// Lazily created inside the handler so env vars are available at runtime
+function getSupabase() {
+  return createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY!
+  );
+}
 
 export async function POST(req: NextRequest) {
   const body = await req.text();
@@ -29,7 +31,7 @@ export async function POST(req: NextRequest) {
       typeof session.customer === "string" ? session.customer : null;
 
     if (email) {
-      await supabase
+      await getSupabase()
         .from("users")
         .update({
           paid: true,

@@ -1,11 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 
-// Service role key bypasses RLS entirely — only safe server-side
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-);
+// Lazily created inside the handler so env vars are available at runtime
+function getSupabase() {
+  return createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY!
+  );
+}
 
 export async function POST(req: NextRequest) {
   try {
@@ -15,7 +17,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Email required" }, { status: 400 });
     }
 
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("users")
       .upsert(
         { email, country: country ?? null, quiz_answers: quizAnswers ?? null },
