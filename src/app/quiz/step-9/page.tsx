@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { useQuiz } from "@/contexts/QuizContext";
-import InritchLogo from "@/components/InritchLogo";
+import Image from "next/image";
 import SegmentedProgressBar from "@/components/SegmentedProgressBar";
 import ContinueButton from "@/components/ContinueButton";
 
@@ -92,19 +92,20 @@ export default function Step9() {
     <div className="flex flex-col items-center w-full h-full bg-white">
       {/* Header — logo only */}
       <div className="flex justify-between items-end w-full mt-4 mb-2.5 px-5 sm:px-10 absolute top-0 left-0 right-0 z-10">
-        <InritchLogo className="cursor-pointer" />
+        <Image src="/3.png" alt="Logo" width={175} height={35} className="cursor-pointer" />
         <div />
       </div>
 
       <div className="w-full h-[58px]" />
 
-      <div className="flex flex-col flex-1 items-center w-full max-w-[664px] mx-auto px-4 sm:px-6 mt-3 mb-3">
+      <div className="flex flex-col flex-1 justify-between items-center w-full max-w-[664px] mx-auto px-4 sm:px-6 mt-3 mb-8">
         {/* Bar without "Profile" label */}
         <SegmentedProgressBar filledCount={8} showLabel={false} />
 
-        <div className="flex flex-col mt-10 w-full">
+        {/* Centered content block */}
+        <div className="flex flex-col items-center w-full max-w-[400px]">
           <span
-            className="font-semibold text-[24px] leading-8 text-black text-center font-[Montserrat,sans-serif]"
+            className="font-semibold text-[24px] leading-8 text-black text-center font-[Montserrat,sans-serif] w-full"
             style={{ marginBottom: 40 }}
           >
             Where are you currently based?
@@ -167,20 +168,18 @@ export default function Step9() {
           </div>
 
           <span
-            className="text-[14px] font-medium leading-[22px] text-center font-[Montserrat,sans-serif] mt-6"
-            style={{ color: "rgb(129,143,164)" }}
+            className="text-[14px] font-medium leading-[22px] text-center font-[Montserrat,sans-serif]"
+            style={{ color: "rgb(129,143,164)", marginTop: 24 }}
           >
             If you&apos;re a digital nomad, choose your tax residence.
           </span>
         </div>
 
-        <div className="mt-8">
-          <ContinueButton
-            label="Next"
-            onClick={() => goToStep(10)}
-            testId="next-button"
-          />
-        </div>
+        <ContinueButton
+          label="Next"
+          onClick={() => goToStep(10)}
+          testId="next-button"
+        />
       </div>
     </div>
   );

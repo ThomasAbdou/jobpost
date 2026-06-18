@@ -1,7 +1,7 @@
 "use client";
 
 import { useQuiz } from "@/contexts/QuizContext";
-import InritchLogo from "@/components/InritchLogo";
+import Image from "next/image";
 
 const OPTIONS = [
   { id: "lt1", emoji: "👨‍💻", label: "<1 year of\u00a0experience" },
@@ -25,7 +25,7 @@ export default function Step1() {
     >
       {/* Header */}
       <div className="flex justify-between items-end w-full mt-4 mb-2.5 px-5 sm:px-10 absolute top-0 left-0 right-0 z-10">
-        <InritchLogo className="cursor-pointer" />
+        <Image src="/remoteo3.png" alt="Logo" width={175} height={35} className="cursor-pointer" />
         <div className="cursor-pointer bg-white border border-[#e2e6eb] rounded-lg flex justify-center items-center gap-1 px-2 py-1.5">
           <span className="text-xl leading-[18px]">🇺🇸</span>
           <span className="font-semibold text-xs leading-4 text-black uppercase font-[Montserrat,sans-serif]">en</span>

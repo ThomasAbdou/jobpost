@@ -16,7 +16,7 @@ export default function Step10() {
       <div className="w-full h-3" />
 
       <div
-        className="flex flex-col flex-1 justify-between items-center w-full max-w-[664px] mx-auto px-4 sm:px-6 mt-2 mb-8 sm:mb-2"
+        className="flex flex-col flex-1 justify-between items-center w-full max-w-[664px] mx-auto px-4 sm:px-6 mt-2 mb-12"
       >
         <SegmentedProgressBar filledCount={9} />
 
