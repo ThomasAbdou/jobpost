@@ -213,16 +213,16 @@ export default function Step33() {
             </span>
 
             <div className="mt-4">
-              <a href="https://intch.org/legal/User_agreement.pdf" target="_blank" rel="noopener noreferrer" className="underline">
+              <a href="https://Remoteo.org/legal/User_agreement.pdf" target="_blank" rel="noopener noreferrer" className="underline">
                 <span className="font-medium text-[12px] leading-4 font-[Montserrat,sans-serif]" style={{ color: "rgb(129,143,164)" }}>Subscription Terms</span>
               </a>
             </div>
 
             <span
-              className="font-medium text-[10px] leading-[14px] text-center font-[Montserrat,sans-serif] mt-10 mb-4 whitespace-pre"
+              className="font-medium text-[10px] leading-[14px] text-center font-[Montserrat,sans-serif] mt-10 mb-[52px] whitespace-pre"
               style={{ color: "rgb(129,143,164)" }}
             >
-              {`Intch INC\n919 North Market Street, Suite 950\nCity of Wilmington, County of New Castle, DE 19801\nUSA`}
+              {`Remoteo INC\n919 North Market Street, Suite 950\nCity of Wilmington, County of New Castle, DE 19801\nUSA`}
             </span>
           </div>
         </div>

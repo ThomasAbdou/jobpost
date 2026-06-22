@@ -20,7 +20,7 @@ export default function Step3() {
 
         <div className="flex flex-col flex-grow justify-center items-center gap-10 w-full">
           <span className="font-semibold text-[26px] leading-[31px] text-black text-center font-[Montserrat,sans-serif]">
-            Professionals from 140+ countries already trust&nbsp;Intch
+            Professionals from 140+ countries already trust&nbsp;Remoteo
           </span>
 
           {/* Quote card */}
@@ -40,7 +40,7 @@ export default function Step3() {
               className="text-[13px] leading-[18px] font-[Montserrat,sans-serif] text-center"
               style={{ color: "rgb(84,93,108)" }}
             >
-              <strong className="font-bold">Intch</strong> is{" "}
+              <strong className="font-bold">Remoteo</strong> is{" "}
               <strong className="font-bold">disrupting</strong> the industry, creating a tectonic shift for{" "}
               <strong className="font-bold">professionals</strong> seeking side{" "}
               <strong className="font-bold">projects</strong>

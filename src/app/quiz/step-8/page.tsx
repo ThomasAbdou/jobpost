@@ -62,14 +62,12 @@ export default function Step8() {
         </div>
 
         <div className="w-full">
-          <div className="mt-4">
-            <ContinueButton
+          <ContinueButton
               label="Next"
               disabled={checked.size === 0}
               onClick={() => checked.size > 0 && goToStep(9)}
               testId="next-button"
             />
-          </div>
         </div>
       </div>
     </div>

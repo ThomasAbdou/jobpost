@@ -10,14 +10,14 @@ export default function SuccessPage() {
       </div>
       <h1 className="font-bold text-[28px] leading-[34px] text-black">You&apos;re all set!</h1>
       <p className="font-medium text-[15px] leading-6 text-center" style={{ color: "rgb(84,93,108)" }}>
-        Your payment was successful. Welcome to Intch — we&apos;ll start matching you with side projects right away.
+        Your payment was successful. Welcome to Remoteo — we&apos;ll start matching you with side projects right away.
       </p>
       <a
-        href="https://intch.org"
+        href="https://Remoteo.org"
         className="flex justify-center items-center rounded-xl w-full max-w-[327px] mt-4"
         style={{ padding: "15px 30px", background: "linear-gradient(74.28deg, rgb(92,17,215) -33.53%, rgb(55,203,250) 132.52%)" }}
       >
-        <span className="font-semibold text-[15px] text-white font-[Montserrat,sans-serif]">Open Intch App</span>
+        <span className="font-semibold text-[15px] text-white font-[Montserrat,sans-serif]">Open Remoteo App</span>
       </a>
     </div>
   );

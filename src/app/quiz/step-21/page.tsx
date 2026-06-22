@@ -63,16 +63,14 @@ export default function Step21() {
                   className="font-semibold"
                   style={{ color: "rgb(13,169,94)" }}
                 >
-                  shared privately within exclusive communities such as&nbsp;Intch
+                  shared privately within exclusive communities such as&nbsp;Remoteo
                 </strong>
               </span>
             </div>
           </div>
         </div>
 
-        <div className="mt-4">
-          <ContinueButton label="Continue" onClick={() => goToStep(22)} testId="next-button" />
-        </div>
+        <ContinueButton label="Continue" onClick={() => goToStep(22)} testId="next-button" />
       </div>
     </div>
   );

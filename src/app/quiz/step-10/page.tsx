@@ -16,18 +16,18 @@ export default function Step10() {
       <div className="w-full h-3" />
 
       <div
-        className="flex flex-col flex-1 justify-between items-center w-full max-w-[664px] mx-auto px-4 sm:px-6 mt-2 mb-12"
+        className="flex flex-col flex-1 items-center w-full max-w-[664px] mx-auto px-4 sm:px-6 mt-8 mb-[52px]"
       >
         <SegmentedProgressBar filledCount={9} />
 
-        <span
-          className="font-semibold text-[24px] leading-8 text-black text-center font-[Montserrat,sans-serif]"
-          style={{ marginBottom: 40 }}
-        >
-          Do you have authorization to work in the US?
-        </span>
+        <div className="flex flex-col flex-1 justify-center items-center w-full gap-10">
+          <span
+            className="font-semibold text-[24px] leading-8 text-black text-center font-[Montserrat,sans-serif]"
+          >
+            Do you have authorization to work in the US?
+          </span>
 
-        <div className="flex gap-3 w-full max-w-[327px]">
+          <div className="flex gap-3 w-full max-w-[327px]">
           {/* No */}
           <button
             onClick={() => choose("no")}
@@ -57,6 +57,7 @@ export default function Step10() {
               Yes
             </span>
           </button>
+          </div>
         </div>
       </div>
     </div>

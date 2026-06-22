@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import { useQuiz } from "@/contexts/QuizContext";
 import Step1 from "./step-1/page";
 import Step2 from "./step-2/page";
@@ -46,10 +47,17 @@ const STEPS: Record<number, React.ComponentType> = {
 };
 
 export default function QuizPage() {
-  const { currentStep } = useQuiz();
+  const { currentStep, resetQuiz } = useQuiz();
+
+  // Always restart from step 1 when the page is freshly loaded
+  useEffect(() => {
+    resetQuiz();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const StepComponent = STEPS[currentStep] ?? Step1;
   return (
-    <div style={{ height: "100dvh", overflow: "hidden" }}>
+    <div style={{ height: "100dvh", overflow: "hidden", paddingBottom: 96 }}>
       <StepComponent />
     </div>
   );

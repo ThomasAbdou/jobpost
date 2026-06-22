@@ -14,23 +14,23 @@ const LOADING_ITEMS = [
 const REVIEWS = [
   {
     name: "Jack O.",
-    text: <>Discovering <b>Intch</b> came at the right time for me, especially <b>after a layoff.</b> It has <b>connected</b> me to a few <b>side projects,</b> which was crucial for <b>maintaining</b> my <b>lifestyle</b> and keeping the, providing me with added <b>financial stability.</b></>,
+    text: <>Discovering <b>Remoteo</b> came at the right time for me, especially <b>after a layoff.</b> It has <b>connected</b> me to a few <b>side projects,</b> which was crucial for <b>maintaining</b> my <b>lifestyle</b> and keeping the, providing me with added <b>financial stability.</b></>,
   },
   {
     name: "Rashid N.",
-    text: <><b>Intch</b> is <b>useful.</b> After I got laid off, it <b>helped</b> me find some <b>side projects</b> to keep things <b>stable.</b> Now, I&apos;m working on different things, <b>sharpening my skills,</b> and even <b>moved to Dubai</b> for a change of scenery. It&apos;s been a good tool for <b>finding side-work,</b> and being part of this <b>community</b> feels cool.</>,
+    text: <><b>Remoteo</b> is <b>useful.</b> After I got laid off, it <b>helped</b> me find some <b>side projects</b> to keep things <b>stable.</b> Now, I&apos;m working on different things, <b>sharpening my skills,</b> and even <b>moved to Dubai</b> for a change of scenery. It&apos;s been a good tool for <b>finding side-work,</b> and being part of this <b>community</b> feels cool.</>,
   },
   {
     name: "Elena G.",
-    text: <>Hey, just wanted to <b>share</b> a bit about <b>Intch.</b> Found it when I was kinda bored with my job and <b>looking</b> for <b>something more.</b> It&apos;s pretty <b>cool; found</b> some side <b>gigs</b> that are helping me <b>learn new stuff.</b> Cheers, Intch</>,
+    text: <>Hey, just wanted to <b>share</b> a bit about <b>Remoteo.</b> Found it when I was kinda bored with my job and <b>looking</b> for <b>something more.</b> It&apos;s pretty <b>cool; found</b> some side <b>gigs</b> that are helping me <b>learn new stuff.</b> Cheers, Remoteo</>,
   },
   {
     name: "Andrei P.",
-    text: <>Post-layoff, <b>Intch</b> was there to offer some <b>side projects.</b> It&apos;s been useful for <b>staying afloat</b> and picking up new skills. It&apos;s been an <b>alright experience.</b></>,
+    text: <>Post-layoff, <b>Remoteo</b> was there to offer some <b>side projects.</b> It&apos;s been useful for <b>staying afloat</b> and picking up new skills. It&apos;s been an <b>alright experience.</b></>,
   },
   {
     name: "Min-jun K.",
-    text: <><b>I needed</b> an <b>extra source of income</b> and <b>Intch</b> turned out to be a <b>great platform</b> for that. <b>Found</b> quite a few <b>side projects</b> that have been <b>great for learning</b> new things and keeping busy. Being part of such a <b>cool community</b> has been a <b>great experience.</b></>,
+    text: <><b>I needed</b> an <b>extra source of income</b> and <b>Remoteo</b> turned out to be a <b>great platform</b> for that. <b>Found</b> quite a few <b>side projects</b> that have been <b>great for learning</b> new things and keeping busy. Being part of such a <b>cool community</b> has been a <b>great experience.</b></>,
   },
 ];
 

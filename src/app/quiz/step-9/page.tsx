@@ -54,14 +54,45 @@ const COUNTRIES = [
   { code: "ZZ", name: "Other", flag: "🌍" },
 ];
 
-const DEFAULT = COUNTRIES.find((c) => c.code === "AE")!;
+const TZ_TO_COUNTRY: Record<string, string> = {
+  "America/New_York": "US", "America/Chicago": "US", "America/Denver": "US",
+  "America/Los_Angeles": "US", "America/Phoenix": "US", "America/Anchorage": "US",
+  "America/Toronto": "CA", "America/Vancouver": "CA", "America/Winnipeg": "CA",
+  "America/Sao_Paulo": "BR", "America/Argentina/Buenos_Aires": "AR", "America/Mexico_City": "MX",
+  "Europe/London": "GB", "Europe/Paris": "FR", "Europe/Berlin": "DE",
+  "Europe/Madrid": "ES", "Europe/Rome": "IT", "Europe/Amsterdam": "NL",
+  "Europe/Zurich": "CH", "Europe/Stockholm": "SE", "Europe/Oslo": "NO",
+  "Europe/Copenhagen": "DK", "Europe/Helsinki": "FI", "Europe/Warsaw": "PL",
+  "Europe/Lisbon": "PT", "Europe/Athens": "GR", "Europe/Vienna": "AT",
+  "Europe/Brussels": "BE", "Europe/Prague": "CZ", "Europe/Kyiv": "UA",
+  "Europe/Kiev": "UA", "Europe/Moscow": "RU",
+  "Asia/Dubai": "AE", "Asia/Riyadh": "SA", "Asia/Tokyo": "JP",
+  "Asia/Seoul": "KR", "Asia/Singapore": "SG", "Asia/Kolkata": "IN",
+  "Asia/Karachi": "PK", "Asia/Bangkok": "TH", "Asia/Ho_Chi_Minh": "VN",
+  "Asia/Jakarta": "ID", "Asia/Kuala_Lumpur": "MY", "Asia/Manila": "PH",
+  "Asia/Jerusalem": "IL", "Asia/Shanghai": "CN", "Asia/Hong_Kong": "SG",
+  "Africa/Johannesburg": "ZA", "Africa/Lagos": "NG", "Africa/Cairo": "EG",
+  "Australia/Sydney": "AU", "Australia/Melbourne": "AU", "Australia/Perth": "AU",
+  "Pacific/Auckland": "NZ",
+};
+
+function getDefaultCountry() {
+  const tz = typeof window !== "undefined"
+    ? Intl.DateTimeFormat().resolvedOptions().timeZone
+    : "";
+  const code = TZ_TO_COUNTRY[tz] ?? "US";
+  return COUNTRIES.find((c) => c.code === code) ?? COUNTRIES.find((c) => c.code === "US")!;
+}
 
 export default function Step9() {
   const { answers, setAnswer , goToStep } = useQuiz();
-  const savedCountry = COUNTRIES.find((c) => c.name === answers.country) ?? DEFAULT;
 
-  const [selected, setSelected] = useState(savedCountry);
-  const [query, setQuery] = useState(savedCountry.name);
+  const [selected, setSelected] = useState(() =>
+    COUNTRIES.find((c) => c.name === answers.country) ?? getDefaultCountry()
+  );
+  const [query, setQuery] = useState(() =>
+    (COUNTRIES.find((c) => c.name === answers.country) ?? getDefaultCountry()).name
+  );
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -92,18 +123,18 @@ export default function Step9() {
     <div className="flex flex-col items-center w-full h-full bg-white">
       {/* Header — logo only */}
       <div className="flex justify-between items-end w-full mt-4 mb-2.5 px-5 sm:px-10 absolute top-0 left-0 right-0 z-10">
-        <Image src="/3.png" alt="Logo" width={175} height={35} className="cursor-pointer" />
+        <Image src="/remoteo3.png" alt="Logo" width={175} height={35} className="cursor-pointer" />
         <div />
       </div>
 
       <div className="w-full h-[58px]" />
 
-      <div className="flex flex-col flex-1 justify-between items-center w-full max-w-[664px] mx-auto px-4 sm:px-6 mt-3 mb-8">
+      <div className="flex flex-col flex-1 items-center w-full max-w-[664px] mx-auto px-4 sm:px-6 mt-3 mb-[52px]">
         {/* Bar without "Profile" label */}
         <SegmentedProgressBar filledCount={8} showLabel={false} />
 
         {/* Centered content block */}
-        <div className="flex flex-col items-center w-full max-w-[400px]">
+        <div className="flex flex-col flex-1 justify-center items-center w-full max-w-[400px]">
           <span
             className="font-semibold text-[24px] leading-8 text-black text-center font-[Montserrat,sans-serif] w-full"
             style={{ marginBottom: 40 }}

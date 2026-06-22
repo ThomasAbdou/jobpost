@@ -1,7 +1,6 @@
 "use client";
 
 import { useQuiz } from "@/contexts/QuizContext";
-
 import SegmentedProgressBar from "@/components/SegmentedProgressBar";
 import ContinueButton from "@/components/ContinueButton";
 
@@ -11,11 +10,10 @@ export default function Step18() {
   return (
     <div className="flex flex-col items-center w-full h-full bg-white">
       <div className="w-full h-3" />
-      <div className="flex flex-col flex-1 justify-between items-center w-full max-w-[664px] mx-auto px-4 sm:px-6 mt-2 mb-2">
+      <div className="flex flex-col flex-1 items-center w-full max-w-[664px] mx-auto px-4 sm:px-6 mt-8">
         <SegmentedProgressBar filledCount={16} />
 
-        <div className="flex flex-col items-center gap-7">
-          {/* Illustration */}
+        <div className="flex flex-col flex-1 justify-center items-center gap-7">
           <div
             className="w-[135px] h-[135px] rounded-2xl flex items-center justify-center text-[72px]"
             style={{ backgroundColor: "rgb(245,247,253)" }}
@@ -34,9 +32,7 @@ export default function Step18() {
           </div>
         </div>
 
-        <div className="flex gap-3 w-full max-w-[327px]">
-          <ContinueButton label="Next" onClick={() => goToStep(19)} testId="next-button" />
-        </div>
+        <ContinueButton label="Next" onClick={() => goToStep(19)} testId="next-button" />
       </div>
     </div>
   );

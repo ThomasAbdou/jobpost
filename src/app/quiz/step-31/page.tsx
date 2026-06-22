@@ -152,11 +152,11 @@ export default function Step31() {
           </button>
           <span className="font-medium text-[11px] leading-[14px] text-center font-[Montserrat,sans-serif]" style={{ color: "rgb(129,143,164)" }}>
             By continuing you agree with{" "}
-            <a href="https://intch.org/legal/User_agreement.pdf" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: "rgb(73,89,220)" }}>
+            <a href="https://Remoteo.org/legal/User_agreement.pdf" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: "rgb(73,89,220)" }}>
               terms of service
             </a>{" "}
             and&nbsp;
-            <a href="https://intch.org/legal/Privacy_policy.pdf" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: "rgb(73,89,220)" }}>
+            <a href="https://Remoteo.org/legal/Privacy_policy.pdf" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: "rgb(73,89,220)" }}>
               privacy&nbsp;policy
             </a>
           </span>

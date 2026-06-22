@@ -26,14 +26,11 @@ export default function Step1() {
       {/* Header */}
       <div className="flex justify-between items-end w-full mt-4 mb-2.5 px-5 sm:px-10 absolute top-0 left-0 right-0 z-10">
         <Image src="/remoteo3.png" alt="Logo" width={175} height={35} className="cursor-pointer" />
-        <div className="cursor-pointer bg-white border border-[#e2e6eb] rounded-lg flex justify-center items-center gap-1 px-2 py-1.5">
-          <span className="text-xl leading-[18px]">🇺🇸</span>
-          <span className="font-semibold text-xs leading-4 text-black uppercase font-[Montserrat,sans-serif]">en</span>
-        </div>
+        <div />
       </div>
 
       {/* Content */}
-      <div className="flex flex-col flex-1 justify-center items-center w-full max-w-[664px] mx-auto px-4 sm:px-6 mt-8 mb-12">
+      <div className="flex flex-col flex-1 justify-center items-center w-full max-w-[664px] mx-auto px-4 sm:px-6 mt-8 mb-[52px]">
         <div className="flex flex-col flex-grow justify-center items-center w-full">
           <p className="text-[16px] leading-6 font-medium text-black text-center whitespace-pre-line font-[Montserrat,sans-serif]">
             Due to the economic crisis, companies are switching to{" "}

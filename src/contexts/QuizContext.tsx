@@ -32,6 +32,7 @@ interface QuizContextType {
   setAnswer: <K extends keyof QuizAnswers>(key: K, value: QuizAnswers[K]) => void;
   currentStep: number;
   goToStep: (step: number) => void;
+  resetQuiz: () => void;
 }
 
 const QuizContext = createContext<QuizContextType | null>(null);
@@ -62,12 +63,20 @@ export function QuizProvider({ children }: { children: React.ReactNode }) {
   const goToStep = (step: number) => {
     setCurrentStep(step);
     try { localStorage.setItem(STEP_KEY, String(step)); } catch {}
-    // Scroll to top on step change
     if (typeof window !== "undefined") window.scrollTo(0, 0);
   };
 
+  const resetQuiz = () => {
+    setAnswers({});
+    setCurrentStep(1);
+    try {
+      localStorage.removeItem(STORAGE_KEY);
+      localStorage.removeItem(STEP_KEY);
+    } catch {}
+  };
+
   return (
-    <QuizContext.Provider value={{ answers, setAnswer, currentStep, goToStep }}>
+    <QuizContext.Provider value={{ answers, setAnswer, currentStep, goToStep, resetQuiz }}>
       {children}
     </QuizContext.Provider>
   );

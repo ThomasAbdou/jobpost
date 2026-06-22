@@ -36,7 +36,7 @@ export default function Step25() {
       <div className="w-full h-3" />
       <div className="flex flex-col flex-1 min-h-0 items-center w-full max-w-[664px] mx-auto px-4 sm:px-6 mt-2 mb-2">
         <SegmentedProgressBar filledCount={23} />
-        <span className="font-semibold text-[24px] leading-8 text-black text-center font-[Montserrat,sans-serif] mt-10 mb-4">
+        <span className="font-semibold text-[24px] leading-8 text-black text-center font-[Montserrat,sans-serif] mt-10 mb-[52px]">
           Pick the benefits you value most
         </span>
         <div className="flex flex-col gap-3 w-full max-w-[420px] overflow-y-auto flex-1 min-h-0 py-1">
@@ -44,9 +44,7 @@ export default function Step25() {
             <CheckboxOption key={b.id} id={b.id} label={b.label} checked={checked.has(b.id)} onChange={toggle} />
           ))}
         </div>
-        <div className="pt-4 w-full">
-          <ContinueButton label="Next" disabled={checked.size === 0} onClick={() => checked.size > 0 && goToStep(26)} testId="next-button" />
-        </div>
+        <ContinueButton label="Next" disabled={checked.size === 0} onClick={() => checked.size > 0 && goToStep(26)} testId="next-button" />
       </div>
     </div>
   );

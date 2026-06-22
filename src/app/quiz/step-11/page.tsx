@@ -5,20 +5,17 @@ import SegmentedProgressBar from "@/components/SegmentedProgressBar";
 import ContinueButton from "@/components/ContinueButton";
 
 export default function Step11() {
-  const { answers , goToStep } = useQuiz();
+  const { answers, goToStep } = useQuiz();
   const isYes = answers.usAuth === "yes";
 
   return (
     <div className="flex flex-col items-center w-full h-full bg-white">
       <div className="w-full h-3" />
 
-      <div
-        className="flex flex-col flex-1 justify-between items-center w-full max-w-[664px] mx-auto px-4 sm:px-6 mt-2 mb-2"
-      >
+      <div className="flex flex-col flex-1 items-center w-full max-w-[664px] mx-auto px-4 sm:px-6 mt-8">
         <SegmentedProgressBar filledCount={9} />
 
-        <div className="flex flex-col items-center gap-7">
-          {/* Image / illustration */}
+        <div className="flex flex-col flex-1 justify-center items-center gap-7">
           <div
             className="w-[135px] h-[135px] rounded-full flex items-center justify-center text-[80px]"
             style={{ backgroundColor: isYes ? "#e9ffed" : "#f0f4ff" }}
@@ -50,13 +47,11 @@ export default function Step11() {
           </div>
         </div>
 
-        <div className="flex gap-3 w-full max-w-[327px]">
-          <ContinueButton
-            label="Next"
-            onClick={() => goToStep(12)}
-            testId="next-button"
-          />
-        </div>
+        <ContinueButton
+          label="Next"
+          onClick={() => goToStep(12)}
+          testId="next-button"
+        />
       </div>
     </div>
   );

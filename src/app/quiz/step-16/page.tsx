@@ -27,7 +27,7 @@ export default function Step16() {
       <div className="w-full h-3" />
       <div className="flex flex-col flex-1 min-h-0 items-center w-full max-w-[664px] mx-auto px-4 sm:px-6 mt-2 mb-2">
         <SegmentedProgressBar filledCount={14} />
-        <span className="font-semibold text-[24px] leading-8 text-black text-center font-[Montserrat,sans-serif] mt-6 mb-4">
+        <span className="font-semibold text-[24px] leading-8 text-black text-center font-[Montserrat,sans-serif] mt-6 mb-[52px]">
           What&apos;s your current professional level?
         </span>
         <div className="flex flex-col gap-3 w-full max-w-[420px] overflow-y-auto flex-1 min-h-0 py-1">
@@ -35,9 +35,7 @@ export default function Step16() {
             <RadioOption key={o.id} id={o.id} label={o.label} checked={selected === o.id} onChange={choose} />
           ))}
         </div>
-        <div className="pt-4 w-full">
-          <ContinueButton label="Next" disabled={!selected} onClick={() => selected && goToStep(17)} testId="next-button" />
-        </div>
+        <ContinueButton label="Next" disabled={!selected} onClick={() => selected && goToStep(17)} testId="next-button" />
       </div>
     </div>
   );
