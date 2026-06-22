@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { QuizProvider } from "@/contexts/QuizContext";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: "Inritch – Find Your Perfect Part-Time Role",
@@ -16,6 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <QuizProvider>{children}</QuizProvider>
+        <Analytics />
       </body>
     </html>
   );
