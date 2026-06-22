@@ -6,6 +6,9 @@ import { Analytics } from "@vercel/analytics/next";
 export const metadata: Metadata = {
   title: "Inritch – Find Your Perfect Part-Time Role",
   description: "Connect with part-time job opportunities that match your experience and preferences.",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
