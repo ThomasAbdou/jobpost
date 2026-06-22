@@ -209,7 +209,11 @@ export default function Step33() {
             </button>
 
             <span className="font-medium text-[12px] leading-4 text-center font-[Montserrat,sans-serif] mt-4" style={{ color: "rgb(129,143,164)" }}>
-              Extended every month after 1-month intro offer at the full price of $39.99 if you do not cancel 24 hours before the renewal date in your account settings.
+              {selectedPlan === "Remoteo"
+                ? "One-time payment. Lifetime access to Remoteo with no recurring charges."
+                : selectedPlan === "year"
+                ? "Billed annually at $49.99/year. Cancel anytime before renewal to avoid next year's charge."
+                : "Extended every month after 1-month intro offer at the full price of $39.99 if you do not cancel 24 hours before the renewal date in your account settings."}
             </span>
 
             <div className="mt-4">
@@ -222,9 +226,10 @@ export default function Step33() {
               className="font-medium text-[10px] leading-[14px] text-center font-[Montserrat,sans-serif] mt-10 mb-[52px] whitespace-pre"
               style={{ color: "rgb(129,143,164)" }}
             >
-              {`Remoteo INC\n919 North Market Street, Suite 950\nCity of Wilmington, County of New Castle, DE 19801\nUSA`}
+              {`FT Imperium Ltd\nSofia, 1000\n19 Lavele Str.\nBRN: 206391579`}
             </span>
           </div>
+       
         </div>
       </div>
     </div>

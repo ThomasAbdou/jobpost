@@ -31,7 +31,7 @@ export async function POST(req: NextRequest) {
       customer_email: email || undefined,
       metadata: { planId, email: email ?? "" },
       success_url: `${origin}/quiz/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${origin}/quiz`,
+      cancel_url: `${origin}/quiz?cancel=1`,
     });
 
     return NextResponse.json({ url: session.url });

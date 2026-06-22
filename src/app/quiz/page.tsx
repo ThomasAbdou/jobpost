@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { useQuiz } from "@/contexts/QuizContext";
 import Step1 from "./step-1/page";
 import Step2 from "./step-2/page";
@@ -46,12 +47,16 @@ const STEPS: Record<number, React.ComponentType> = {
   31: Step31, 32: Step32, 33: Step33,
 };
 
-export default function QuizPage() {
-  const { currentStep, resetQuiz } = useQuiz();
+function QuizInner() {
+  const { currentStep, resetQuiz, goToStep } = useQuiz();
+  const searchParams = useSearchParams();
 
-  // Always restart from step 1 when the page is freshly loaded
   useEffect(() => {
-    resetQuiz();
+    if (searchParams.get("cancel") === "1") {
+      goToStep(33);
+    } else {
+      resetQuiz();
+    }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -60,5 +65,13 @@ export default function QuizPage() {
     <div style={{ height: "100dvh", overflow: "hidden", paddingBottom: 96 }}>
       <StepComponent />
     </div>
+  );
+}
+
+export default function QuizPage() {
+  return (
+    <Suspense>
+      <QuizInner />
+    </Suspense>
   );
 }
