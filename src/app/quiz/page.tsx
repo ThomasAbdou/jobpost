@@ -61,8 +61,14 @@ function QuizInner() {
   }, []);
 
   const StepComponent = STEPS[currentStep] ?? Step1;
+
+  // Steps that render their own button/footer inside a full-height layout
+  // should not reserve the 96px space used by the global fixed ContinueButton.
+  const selfManagedSteps = new Set([29, 31, 33]);
+  const paddingBottom = selfManagedSteps.has(currentStep) ? 0 : 96;
+
   return (
-    <div style={{ height: "100dvh", overflow: "hidden", paddingBottom: 96 }}>
+    <div style={{ height: "100dvh", overflow: "hidden", paddingBottom }}>
       <StepComponent />
     </div>
   );
