@@ -3,6 +3,7 @@
 import { Suspense, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { useQuiz } from "@/contexts/QuizContext";
+import { trackStep } from "@/lib/visitor";
 import Step1 from "./step-1/page";
 import Step2 from "./step-2/page";
 import Step3 from "./step-3/page";
@@ -48,7 +49,7 @@ const STEPS: Record<number, React.ComponentType> = {
 };
 
 function QuizInner() {
-  const { currentStep, resetQuiz, goToStep } = useQuiz();
+  const { currentStep, resetQuiz, goToStep, answers } = useQuiz();
   const searchParams = useSearchParams();
 
   useEffect(() => {
@@ -59,6 +60,14 @@ function QuizInner() {
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // Record the furthest step each visitor reaches.
+  useEffect(() => {
+    trackStep(currentStep, {
+      email: answers.email,
+      country: answers.country,
+    });
+  }, [currentStep, answers.email, answers.country]);
 
   const StepComponent = STEPS[currentStep] ?? Step1;
 
