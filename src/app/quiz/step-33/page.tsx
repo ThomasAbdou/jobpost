@@ -66,12 +66,12 @@ export default function Step33() {
   const [loading, setLoading] = useState(false);
 
   return (
-    <div id="__next" style={{ height: "100%", margin: 0, padding: 0, backgroundColor: "rgb(255,255,255)", color: "rgb(82,97,120)", fontFamily: "Montserrat, sans-serif", overflow: "hidden", display: "flex", flexDirection: "column" }}>
+    <div id="__next" style={{ height: "100%", maxHeight: "100%", margin: 0, padding: 0, backgroundColor: "rgb(255,255,255)", color: "rgb(82,97,120)", fontFamily: "Montserrat, sans-serif", display: "flex", flexDirection: "column" }}>
       {/* Logo — desktop only */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src="/remoteo3.png" alt="Logo" className="hidden sm:block" style={{ cursor: "pointer", position: "absolute", top: 15, left: 40, zIndex: 10, width: 175, height: 35 }} />
 
-      <div className="flex flex-col items-center w-full flex-1 min-h-0 overflow-y-auto">
+      <div className="flex flex-col items-center w-full flex-1 min-h-0 overflow-y-auto overflow-x-hidden">
         <div className="flex flex-col justify-center items-center relative w-full px-4 pb-4" style={{ maxWidth: 420 }}>
 
           <span className="font-bold text-[30px] sm:text-[36px] leading-[38px] sm:leading-[43px] text-black text-center font-[Montserrat,sans-serif] mt-6 sm:mt-[80px]">
