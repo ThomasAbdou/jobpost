@@ -66,19 +66,19 @@ export default function Step33() {
   const [loading, setLoading] = useState(false);
 
   return (
-    <div id="__next" style={{ height: "100%", margin: 0, padding: 0, backgroundColor: "rgb(255,255,255)", color: "rgb(82,97,120)", fontFamily: "Montserrat, sans-serif" }}>
-      {/* Logo */}
+    <div id="__next" style={{ height: "100%", margin: 0, padding: 0, backgroundColor: "rgb(255,255,255)", color: "rgb(82,97,120)", fontFamily: "Montserrat, sans-serif", overflow: "hidden", display: "flex", flexDirection: "column" }}>
+      {/* Logo — desktop only */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src="/remoteo3.png" alt="Logo" style={{ cursor: "pointer", position: "absolute", top: 15, left: 40, zIndex: 10, width: 175, height: 35 }} />
+      <img src="/remoteo3.png" alt="Logo" className="hidden sm:block" style={{ cursor: "pointer", position: "absolute", top: 15, left: 40, zIndex: 10, width: 175, height: 35 }} />
 
-      <div className="flex flex-col items-center w-full h-full" style={{ paddingTop: 64 }}>
-        <div className="flex flex-col justify-center items-center relative" style={{ width: 420, maxWidth: "100%" }}>
+      <div className="flex flex-col items-center w-full flex-1 min-h-0 overflow-y-auto">
+        <div className="flex flex-col justify-center items-center relative w-full px-4 pb-4" style={{ maxWidth: 420 }}>
 
-          <span className="font-bold text-[36px] leading-[43px] text-black text-center font-[Montserrat,sans-serif] mt-10">
+          <span className="font-bold text-[30px] sm:text-[36px] leading-[38px] sm:leading-[43px] text-black text-center font-[Montserrat,sans-serif] mt-6 sm:mt-[80px]">
             Choose Your Plan
           </span>
 
-          <div className="flex flex-col justify-center items-center w-full px-10">
+          <div className="flex flex-col justify-center items-center w-full">
             <span className="font-medium text-[16px] leading-6 text-center font-[Montserrat,sans-serif] mt-4" style={{ color: "rgb(129,143,164)" }}>
               for <strong>{answers.email || "you"}</strong>
             </span>
@@ -161,14 +161,7 @@ export default function Step33() {
                 })}
               </div>
 
-              {/* Promo code */}
-              <div className="flex justify-center items-center w-full">
-                <button type="button" style={{ background: "none", border: "none", margin: "24px 0 0", cursor: "pointer" }}>
-                  <span className="font-medium text-[13px] leading-[18px] font-[Montserrat,sans-serif] underline" style={{ color: "rgb(73,89,220)" }}>
-                    I have a promo-code
-                  </span>
-                </button>
-              </div>
+
             </div>
 
             {/* Get Access button */}
@@ -209,21 +202,15 @@ export default function Step33() {
             </button>
 
             <span className="font-medium text-[12px] leading-4 text-center font-[Montserrat,sans-serif] mt-4" style={{ color: "rgb(129,143,164)" }}>
-              {selectedPlan === "Remoteo"
+              {selectedPlan === "lifetime"
                 ? "One-time payment. Lifetime access to Remoteo with no recurring charges."
                 : selectedPlan === "year"
                 ? "Billed annually at $49.99/year. Cancel anytime before renewal to avoid next year's charge."
                 : "Extended every month after 1-month intro offer at the full price of $39.99 if you do not cancel 24 hours before the renewal date in your account settings."}
             </span>
 
-            <div className="mt-4">
-              <a href="https://Remoteo.org/legal/User_agreement.pdf" target="_blank" rel="noopener noreferrer" className="underline">
-                <span className="font-medium text-[12px] leading-4 font-[Montserrat,sans-serif]" style={{ color: "rgb(129,143,164)" }}>Subscription Terms</span>
-              </a>
-            </div>
-
             <span
-              className="font-medium text-[10px] leading-[14px] text-center font-[Montserrat,sans-serif] mt-10 mb-[52px] whitespace-pre"
+              className="font-medium text-[10px] leading-[14px] text-center font-[Montserrat,sans-serif] mt-6 mb-4 whitespace-pre"
               style={{ color: "rgb(129,143,164)" }}
             >
               {`FT Imperium Ltd\nSofia, 1000\n19 Lavele Str.\nBRN: 206391579`}

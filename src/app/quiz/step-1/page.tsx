@@ -23,23 +23,21 @@ export default function Step1() {
       data-testid="step-experience-container"
       className="flex flex-col items-center w-full h-full bg-white"
     >
-      {/* Header */}
-      <div className="flex justify-between items-end w-full mt-4 mb-2.5 px-5 sm:px-10 absolute top-0 left-0 right-0 z-10">
+      {/* Logo — centered on mobile, left on desktop */}
+      <div className="w-full flex justify-center sm:justify-start px-5 sm:px-10 pt-4 shrink-0">
         <Image src="/remoteo3.png" alt="Logo" width={175} height={35} className="cursor-pointer" />
-        <div />
       </div>
 
       {/* Content */}
-      <div className="flex flex-col flex-1 justify-center items-center w-full max-w-[664px] mx-auto px-4 sm:px-6 mt-8 mb-[52px]">
-        <div className="flex flex-col flex-grow justify-center items-center w-full">
-          <p className="text-[16px] leading-6 font-medium text-black text-center whitespace-pre-line font-[Montserrat,sans-serif]">
-            Due to the economic crisis, companies are switching to{" "}
-            <strong className="font-semibold">part-time roles</strong> to reduce expenses. Let&apos;s{" "}
-            <strong className="font-semibold">connect you</strong> to these{" "}
-            <strong className="font-semibold">opportunities.</strong>
-          </p>
+      <div className="flex flex-col flex-1 justify-center items-center w-full max-w-[664px] mx-auto px-4 sm:px-6 pb-[52px] pt-6">
+        <p className="text-[16px] leading-6 font-medium text-black text-center whitespace-pre-line font-[Montserrat,sans-serif]">
+          Due to the economic crisis, companies are switching to{" "}
+          <strong className="font-semibold">part-time roles</strong> to reduce expenses. Let&apos;s{" "}
+          <strong className="font-semibold">connect you</strong> to these{" "}
+          <strong className="font-semibold">opportunities.</strong>
+        </p>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 w-full mt-16">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 w-full mt-8 sm:mt-16">
             {OPTIONS.map((opt, i) => (
               <button
                 key={opt.id}
@@ -57,7 +55,6 @@ export default function Step1() {
                 </span>
               </button>
             ))}
-          </div>
         </div>
       </div>
     </div>

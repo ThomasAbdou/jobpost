@@ -34,7 +34,7 @@ const EXPERTISE = [
 ];
 
 export default function Step14() {
-  const { answers, setAnswer , goToStep } = useQuiz();
+  const { answers, setAnswer, goToStep } = useQuiz();
   const [selected, setSelected] = useState<Set<string>>(
     new Set(answers.expertise ?? [])
   );
@@ -50,50 +50,44 @@ export default function Step14() {
   return (
     <div
       data-testid="step-expertise-container"
-      className="flex flex-col items-center w-full h-full bg-white"
+      className="flex flex-col items-center w-full h-full bg-white overflow-hidden"
     >
-      <div className="w-full h-3" />
+      <div className="w-full h-3 shrink-0" />
 
-      <div className="flex flex-col flex-1 items-center w-full max-w-[664px] mx-auto px-4 sm:px-6 mt-2 mb-2">
+      <div className="flex flex-col flex-1 min-h-0 items-center w-full max-w-[664px] mx-auto px-4 sm:px-6 mt-2">
         <SegmentedProgressBar filledCount={12} />
 
-        <div className="flex flex-col flex-1 justify-center items-center w-full">
-          <span className="font-semibold text-[26px] leading-[31px] text-black text-center font-[Montserrat,sans-serif] mt-8">
-            Select your areas of expertise
-          </span>
+        <span className="font-semibold text-[26px] leading-[31px] text-black text-center font-[Montserrat,sans-serif] mt-8 shrink-0">
+          Select your areas of expertise
+        </span>
 
-          <div className="flex flex-wrap justify-center gap-2 mt-10 w-full pb-20">
-            {EXPERTISE.map((item, i) => {
-              const isSelected = selected.has(item.id);
-              return (
-                <button
-                  key={item.id}
-                  data-testid={`industry_index_${i}`}
-                  onClick={() => toggle(item.id)}
-                  className="flex justify-center items-center rounded-lg h-[34px] px-7 transition-all duration-200 cursor-pointer"
-                  style={{
-                    backgroundColor: isSelected ? "rgb(28,28,113)" : "rgb(245,247,253)",
-                    color: isSelected ? "white" : "rgb(105,135,215)",
-                    border: isSelected ? "none" : "none",
-                  }}
-                >
-                  <span className="font-medium text-[13px] leading-[18px] font-[Montserrat,sans-serif]">
-                    {item.label}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
+        <div className="flex flex-wrap justify-center gap-2 mt-6 w-full flex-1 min-h-0 overflow-y-auto content-start pb-4">
+          {EXPERTISE.map((item, i) => {
+            const isSelected = selected.has(item.id);
+            return (
+              <button
+                key={item.id}
+                data-testid={`industry_index_${i}`}
+                onClick={() => toggle(item.id)}
+                className="flex justify-center items-center rounded-lg h-[34px] px-7 transition-all duration-200 cursor-pointer shrink-0"
+                style={{
+                  backgroundColor: isSelected ? "rgb(28,28,113)" : "rgb(245,247,253)",
+                  color: isSelected ? "white" : "rgb(105,135,215)",
+                }}
+              >
+                <span className="font-medium text-[13px] leading-[18px] font-[Montserrat,sans-serif]">
+                  {item.label}
+                </span>
+              </button>
+            );
+          })}
         </div>
 
-        {/* Sticky button */}
-        <div className="sticky bottom-3 w-full flex justify-center">
-          <ContinueButton
-            label="Next"
-            disabled={selected.size === 0}
-            onClick={() => selected.size > 0 && goToStep(15)}
-          />
-        </div>
+        <ContinueButton
+          label="Next"
+          disabled={selected.size === 0}
+          onClick={() => selected.size > 0 && goToStep(15)}
+        />
       </div>
     </div>
   );

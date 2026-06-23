@@ -29,7 +29,7 @@ export default function Step12() {
         <SegmentedProgressBar filledCount={10} />
 
         <div className="flex flex-col flex-grow justify-center items-center w-full">
-          <span className="font-semibold text-[26px] leading-[31px] text-black text-center font-[Montserrat,sans-serif]">
+          <span className="font-semibold text-[20px] leading-[26px] sm:text-[26px] sm:leading-[31px] text-black text-center font-[Montserrat,sans-serif]">
             How many hours can you dedicate to&nbsp;a&nbsp;side&nbsp;project?
           </span>
 
