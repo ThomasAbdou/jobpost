@@ -70,7 +70,7 @@ export default function Step31() {
                     placeholder="your@email.com"
                     className="block min-w-0 w-full bg-transparent outline-none"
                     style={{
-                      fontSize: "14px",
+                      fontSize: "16px",
                       fontWeight: 500,
                       padding: "14px 12px",
                       border: 0,

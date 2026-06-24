@@ -162,7 +162,7 @@ export default function Step9() {
                   setOpen(true);
                 }}
                 onFocus={() => { setOpen(true); setQuery(""); }}
-                className="flex-1 min-w-0 bg-transparent outline-none text-[13px] leading-5 font-medium text-black font-[Montserrat,sans-serif]"
+                className="flex-1 min-w-0 bg-transparent outline-none text-[16px] leading-5 font-medium text-black font-[Montserrat,sans-serif]"
               />
               <button
                 type="button"
