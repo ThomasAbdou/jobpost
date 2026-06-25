@@ -20,14 +20,14 @@ const PLANS = [
     label: "Lifetime",
     originalPrice: "$59.99",
     badge: { text: "SAVE 90%", color: "rgb(13,169,94)" },
-    priceDetail: <><span style={{ textDecoration: "line-through", color: "rgb(255,67,67)" }}>$0.67</span> &lt; $0.01/day</>,
+    priceDetail: <><span style={{ textDecoration: "line-through", color: "rgb(255,67,67)" }}>$0.50</span> &lt; $0.01/day</>,
   },
   {
     id: "year",
     label: "1 year",
     originalPrice: "$34.95",
     badge: { text: "BESTSELLER", color: "rgb(255,180,67)" },
-    priceDetail: <><span style={{ textDecoration: "line-through", color: "rgb(255,67,67)" }}>$0.67</span> $0.14/day</>,
+    priceDetail: <><span style={{ textDecoration: "line-through", color: "rgb(255,67,67)" }}>$0.50</span> $0.09/day</>,
   },
   {
     id: "month",
@@ -36,7 +36,7 @@ const PLANS = [
     strikePrice: "29.99",
     price: "$14.95",
     badge: null,
-    priceDetail: "$0.67/day",
+    priceDetail: "$0.50/day",
   },
 ];
 
